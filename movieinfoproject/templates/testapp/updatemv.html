@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/demo.css" %}">
+    <title></title>
+  </head>
+  <body>
+    <h1>Movie Information</h1>
+    {% if movie_list %}
+       <table>
+         <thead>
+           <th>Movie Name</th>
+           <th>Hero</th>
+           <th>Heroine</th>
+         </thead>
+        {% for movie in movie_list %}
+           <tr>
+             <td>{{movie.moviename}}</td>
+             <td>{{movie.hero}}</td>
+             <td>{{movie.heroine}}</td>
+           </tr>
+         {% endfor %}
+       </table>
+  {% else%}
+     <p>no movies found</p>
+  {% endif%}
+
+
+
+  </body>
+</html>
